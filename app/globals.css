@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/*
+ * Modern Retro Technical Editorial — the ONLY palette in the app.
+ * Mirrored in lib/theme.ts for SVG + three.js.
+ */
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-paper: #ffffff;
+  --color-ink: #191919;
+  --color-forest: #244d3b;
+  --color-olive: #87977a;
+  --color-soft: #f3f4f2;
+  --color-line: #daddd8;
+
+  --font-display: var(--font-barlow), "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-soft);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-forest);
+  color: var(--color-paper);
+}
+
+/* Solid technical rule */
+.hairline {
+  height: 1px;
+  background: var(--color-ink);
+}
+
+/* Editorial card: flat paper, hairline border, crisp offset shadow. */
+.glass {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  box-shadow: 4px 4px 0 0 var(--color-line);
+}
+
+/* Blueprint grid used behind slides and diagrams */
+.tech-grid {
+  background-image:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Diagram connector animation */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.flow-animated {
+  stroke-dasharray: 10 4;
+  animation: flow-dash 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-animated {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+kbd {
+  font-family: var(--font-mono);
+}

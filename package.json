@@ -1,0 +1,32 @@
+{
+  "name": "presentasi-sistem-informasi-hotel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "export:pdf": "next build && node scripts/export-pdf.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.6",
+    "@react-three/fiber": "9.3.0",
+    "lucide-react": "0.544.0",
+    "motion": "12.23.28",
+    "next": "15.5.29",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.18",
+    "@types/node": "22.18.6",
+    "@types/react": "19.1.17",
+    "@types/react-dom": "19.1.11",
+    "@types/three": "0.180.0",
+    "playwright-core": "1.55.0",
+    "tailwindcss": "4.1.18",
+    "typescript": "5.9.3"
+  }
+}
